@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  background-color: #e0f2fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container {
+  /* background: #000; */
+  margin: auto;
+}
+.heading {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  position: relative;
+  text-align: center;
+}
+
+.heading::before {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 8px;
+  background: #0ea5e9;
+  margin: 0 auto -4.5rem auto;
+}
+
+.reviews-card {
+  max-width: 700px;
+  min-height: 500px;
+  background-color: #f8fafc;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.card-header {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: auto;
+  border-right: 10px solid #0ea5e9;
+  position: relative;
+}
+
+.card-header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 50%;
+}
+
+.svg {
+  position: absolute;
+  background-color: #38bdf8;
+  border-radius: 50%;
+  padding: 0.88rem;
+  top: 25px;
+  left: -14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.name {
+  margin-top: 1rem;
+  text-align: center;
+  color: #475569;
+  font-size: 1.3rem;
+}
+.designation {
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+  font-weight: 100;
+  color: #38bdf8;
+}
+.discription {
+  margin-top: 0.55rem;
+  text-align: start;
+  font-size: 18px;
+  padding-inline: 1rem;
+  font-weight: 500;
+  color: #475569;
+}
+.card-footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 1rem;
+}
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+#icons_1_,
+#icons_2_ {
+  cursor: pointer;
+}
+button {
+  background: #38bdf8;
+  padding: 0.55rem 1rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  color: white;
+}
