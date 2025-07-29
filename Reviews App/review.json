@@ -1,0 +1,62 @@
+const reviewData = [
+    {
+        img: '',
+        name: 'Ravi',
+        designation: 'Frontend Developer',
+        comment: 'Ravi consistently brings creativity and precision to his work. His attention to detail and passion for clean, responsive design make him a valuable team member.'
+    },
+    {
+        img: '',
+        name: 'Sneha',
+        designation: 'UI/UX Designer',
+        comment: 'Sneha’s designs always prioritize user experience. Her wireframes and prototypes are not only functional but also aesthetically pleasing and highly intuitive to interact with.'
+    },
+    {
+        img: '',
+        name: 'Amit',
+        designation: 'Backend Developer',
+        comment: 'Amit is a backend expert who writes scalable, secure code. He understands system architecture well and always contributes smart solutions for complex server-side challenges.'
+    },
+    {
+        img: '',
+        name: 'Priya',
+        designation: 'Full Stack Developer',
+        comment: 'Priya bridges the gap between frontend and backend perfectly. Her ability to work across the stack makes her an essential asset to any development project.'
+    },
+    {
+        img: '',
+        name: 'Rahul',
+        designation: 'DevOps Engineer',
+        comment: 'Rahul ensures reliable deployment pipelines and smooth CI/CD processes. His scripting knowledge and quick problem-solving improve the development workflow significantly across the team.'
+    },
+    {
+        img: '',
+        name: 'Neha',
+        designation: 'QA Tester',
+        comment: 'Neha is meticulous in her testing approach. She catches edge cases others miss, ensuring that all features meet quality standards before release.'
+    },
+    {
+        img: '',
+        name: 'Suresh',
+        designation: 'Project Manager',
+        comment: 'Suresh manages projects with clarity and focus. His leadership style keeps the team motivated and ensures that deadlines are always met with high standards.'
+    },
+    {
+        img: '',
+        name: 'Anjali',
+        designation: 'Content Writer',
+        comment: 'Anjali writes clear, engaging content tailored to the audience. Her words enhance the brand voice and help users connect with the product naturally.'
+    },
+    {
+        img: '',
+        name: 'Karan',
+        designation: 'Graphic Designer',
+        comment: 'Karan’s visual creativity elevates every project. His design choices are always aligned with brand identity and help communicate ideas effectively through strong visuals.'
+    },
+    {
+        img: '',
+        name: 'Divya',
+        designation: 'Product Owner',
+        comment: 'Divya has a strong vision and guides product development with purpose. Her ability to define priorities and align teams ensures consistent and meaningful progress.'
+    }
+];
