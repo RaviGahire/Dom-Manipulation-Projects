@@ -61,94 +61,57 @@ const reviewData = [
     }
 ];
 
-const container = document.querySelector('.container')
+
+
+
+const img = document.querySelector('.person-img')
+const [user_name, user_designation, user_discription] = document.querySelectorAll('.name, .designation, .discription');
+
 const backBtn = document.querySelector('.backbtn');
 const nextBtn = document.querySelector('.nextbtn');
-const random = document.querySelector('.random-btn');
+const randomBtn = document.querySelector('.random-btn');
 
 
-reviewData.map((data)=>{
-cards(data);
+let currentItem = 0;
+
+
+
+
+document.addEventListener('DOMContentLoaded', (e) => {
+    showData(currentItem)
+
+})
+
+function showData(user) {
+    const data = reviewData[user]
+    img.src = data.img
+    user_name.textContent = data.name
+    user_designation.textContent = data.designation
+    user_discription.textContent = data.comment
+}
+
+nextBtn.addEventListener('click', () => {
+    currentItem++
+    if (currentItem > reviewData.length - 1) {
+        currentItem = 0
+    }
+    showData(currentItem)
+
+})
+
+backBtn.addEventListener('click', () => {
+    currentItem--
+    if (currentItem < 0) {
+        currentItem = reviewData.length - 1;
+    }
+    showData(currentItem)
+
 })
 
 
+randomBtn.addEventListener('click', () => {
+   currentItem = Math.floor(Math.random() * reviewData.length )
+    showData(currentItem)
 
-
-
-function cards(data) {
-    const cards = document.createElement('div')
-    cards.classList.add("reviews-card")
-    cards.innerHTML=`
-       <div class="card-header">
-                <div class="svg">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20">
-                        <path fill="white"
-                            d="M0 216C0 149.7 53.7 96 120 96l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64L0 216zm256 0c0-66.3 53.7-120 120-120l8 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-8 0c-30.9 0-56 25.1-56 56l0 8 64 0c35.3 0 64 28.7 64 64l0 64c0 35.3-28.7 64-64 64l-64 0c-35.3 0-64-28.7-64-64l0-136z" />
-                    </svg>
-                </div>
-
-                <img src="${data.img}" alt="image">
-            </div>
-            <h2 class="name">${data.name}</h2>
-            <h3 class="designation">${data.designation}</h3>
-            <p class="discription">${data.comment}</p>
-
-            <div class="card-footer">
-                <div class="icons">
-                    <svg class="backbtn" version="1.1" id="icons_1_" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="25"
-                        viewBox="0 0 128 128" style="enable-background:new 0 0 128 128" xml:space="preserve">
-                        <style>
-                            .st0 {
-                                display: none
-                            }
-
-                            .st1 {
-                                display: inline
-                            }
-
-                            .st2 {
-                                fill: #38bdf8
-                            }
-                        </style>
-                        <g id="row2_1_">
-                            <g id="_x32__4_">
-                                <path class="st2"
-                                    d="M64 .3C28.7.3 0 28.8 0 64s28.7 63.7 64 63.7 64-28.5 64-63.7S99.3.3 64 .3zm0 121C32.2 121.3 6.4 95.7 6.4 64 6.4 32.3 32.2 6.7 64 6.7s57.6 25.7 57.6 57.3c0 31.7-25.8 57.3-57.6 57.3zm22.4-63.7H57.6l12.3-15.2c0-2.2-1.8-3.9-3.9-3.9h-7.1L32 64l26.8 25.5H66c2.2 0 3.9-1.8 3.9-3.9L57.1 69.9h28.6c2.2 0 3.9-1.8 3.9-3.9v-4c0-2.1-1-4.4-3.2-4.4z"
-                                    id="left_1_" />
-                            </g>
-                        </g>
-                    </svg>
-                    <svg class="nextbtn" version="1.1" id="icons_2_" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="25"
-                        viewBox="0 0 128 128" style="enable-background:new 0 0 128 128" xml:space="preserve">
-                        <style>
-                            .st0 {
-                                display: none
-                            }
-
-                            .st1 {
-                                display: inline
-                            }
-
-                            .st2 {
-                                fill: #38bdf8
-                            }
-                        </style>
-                        <g id="row2_1_">
-                            <g id="_x33__3_">
-                                <path class="st2"
-                                    d="M64 .3C28.8.3.3 28.8.3 64s28.5 63.7 63.7 63.7 63.7-28.5 63.7-63.7S99.2.3 64 .3zm0 121C32.3 121.3 6.7 95.7 6.7 64 6.7 32.3 32.3 6.7 64 6.7c31.7 0 57.3 25.7 57.3 57.3 0 31.7-25.6 57.3-57.3 57.3zm-2-82.8c-2.2 0-3.9 1.8-3.9 3.9l12.2 15.2H41.7c-2.2 0-3.2 2.2-3.2 4.4v4c0 2.2 1.8 3.9 3.9 3.9h28.4L58.1 85.6c0 2.2 1.8 3.9 3.9 3.9h7.1L95.8 64 69.1 38.5H62z"
-                                    id="right_1_" />
-                            </g>
-                        </g>
-                    </svg>
-                </div>
-                <button class="random-btn">Surprise Me</button>
-            </div>   
-    `
-
-    console.log(data)
-    container.append(cards)
-
-
-}
+})
 
